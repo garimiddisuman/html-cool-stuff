@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Something</title>
+    <style>
+      h1 {
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 30px;
+        text-decoration: underline solid black;
+      }
+      #board {
+        margin: auto;
+        border: 2px double black;
+        width: 800px;
+        height: 800px;
+      }
+      .row {
+        float: left;
+      }
+      .column {
+        width: 100px;
+        height: 100px;
+      }
+
+      .row:nth-child(2n) > .column:nth-child(2n),
+      .row:nth-child(2n + 1) > .column:nth-child(2n + 1) {
+        background-color: black;
+
+        &:hover {
+          background-color: green;
+        }
+      }
+
+      .row:nth-child(2n) > .column:nth-child(2n + 1),
+      .row:nth-child(2n + 1) > .column:nth-child(2n) {
+        background-color: white;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Disco Board</h1>
+    <div id="board">
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </body>
+</html>
