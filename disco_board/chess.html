@@ -3,21 +3,25 @@
   <head>
     <title>Something</title>
     <style>
+      * {
+        background-color: black;
+      }
       h1 {
         font-family: sans-serif;
         text-align: center;
         font-size: 30px;
-        text-decoration: underline solid black;
+        color: white;
+        text-decoration: underline solid white;
       }
       #board {
         margin: auto;
-        border: 2px double black;
+        border: 2px double white;
         width: 800px;
         height: 800px;
+        display: flex;
+        animation: disco 2s ease infinite alternate;
       }
-      .row {
-        float: left;
-      }
+
       .column {
         width: 100px;
         height: 100px;
@@ -25,19 +29,13 @@
 
       .row:nth-child(2n) > .column:nth-child(2n),
       .row:nth-child(2n + 1) > .column:nth-child(2n + 1) {
-        background-color: black;
-
-        &:hover {
-          background-color: green;
-        }
+        background-color: white;
       }
 
-      .row:nth-child(2n) > .column:nth-child(2n + 1),
-      .row:nth-child(2n + 1) > .column:nth-child(2n) {
-        background-color: white;
-
-        &:hover {
-          background-color: red;
+      @keyframes disco {
+        to {
+          filter: invert();
+          border: 1px solid hsl(358, 100%, 50%);
         }
       }
     </style>

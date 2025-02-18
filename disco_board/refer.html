@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      /* tr > th {
+        border: 1px solid black;
+      }
+
+      tr > th:hover {
+        background-color: aqua;
+      } */
+
+      tr > th {
+        border: 1px solid black;
+
+        &:hover {
+          background-color: aqua;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>header1</th>
+          <th>header2</th>
+          <th>header3</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
+
+``` Here, I am selecting table header twice, one for appling border and one for
+hover. tr > th { border: 1px solid black; } tr > th:hover { background-color:
+aqua; } The same thing can be done by using ampersant. It allows you to access a
+reference to the parent selector. In this case, ampersant (&) refers to tr > th;
+tr > th { border: 1px solid black; &:hover { background-color: aqua; } } ```
