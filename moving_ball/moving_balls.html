@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Balls Moving</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="place"></div>
+    <script>
+      const place = document.querySelector("#place");
+      const colors = [
+        "#FF5733",
+        "#33FF57",
+        "#5733FF",
+        "#FFD700",
+        "#00FFFF",
+        "#FF00FF",
+        "#8A2BE2",
+        "#7FFF00",
+        "#DC143C",
+        "#6495ED",
+        "#FF4500",
+        "#32CD32",
+        "#800080",
+        "#00FA9A",
+        "#FF1493",
+        "#1E90FF",
+        "#B22222",
+        "#FF6347",
+        "#2E8B57",
+        "#8B0000",
+        "#20B2AA",
+        "#FF8C00",
+        "#6A5ACD",
+        "#D2691E",
+      ];
+
+      const colorPick = () => colors[Math.floor(Math.random() * colors.length)];
+      const random = (n) => Math.floor(Math.random() * n);
+
+      const makeBall = () => {
+        const size = Math.floor(Math.random() * 100);
+        const ball = document.createElement("div");
+        ball.style.position = "absolute";
+        ball.style.height = size + "px";
+        ball.style.width = size + "px";
+        ball.style.backgroundColor = `${colorPick()}`;
+        ball.style.borderRadius = "50%";
+        ball.style.marginTop = `${random(1000)}px`;
+        ball.style.marginLeft = `${random(600)}px`;
+        ball.style.opacity = "90%";
+        ball.style.transitionDuration = "1s";
+        place.appendChild(ball);
+
+        setTimeout(() => {
+          ball.style.transform = `translate(${random(1800)}px)`;
+          ball.style.transition = `all ${random(4)}s alternate`;
+        }, 1000);
+
+        setTimeout(() => {
+          ball.style.opacity = "50%";
+        }, 2000);
+
+        setTimeout(() => {
+          ball.style.opacity = "10%";
+        }, 3000);
+
+        setTimeout(() => {
+          place.removeChild(ball);
+        }, 4000);
+      };
+
+      setInterval(makeBall, 40);
+    </script>
+  </body>
+</html>
