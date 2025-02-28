@@ -51,7 +51,7 @@
         ball.style.backgroundColor = `${colorPick()}`;
         ball.style.borderRadius = "50%";
         ball.style.marginTop = `${random(1000)}px`;
-        ball.style.marginLeft = `${random(600)}px`;
+        ball.style.marginLeft = `${random(1800)}px`;
         ball.style.opacity = "90%";
         ball.style.transitionDuration = "1s";
         place.appendChild(ball);
@@ -59,19 +59,19 @@
         setTimeout(() => {
           ball.style.transform = `translate(${random(1800)}px)`;
           ball.style.transition = `all ${random(4)}s alternate`;
-        }, 1000);
+        }, 0);
 
         setTimeout(() => {
           ball.style.opacity = "50%";
-        }, 2000);
+        }, 500);
 
         setTimeout(() => {
           ball.style.opacity = "10%";
-        }, 3000);
+        }, 800);
 
         setTimeout(() => {
           place.removeChild(ball);
-        }, 4000);
+        }, 1000);
       };
 
       setInterval(makeBall, 40);
