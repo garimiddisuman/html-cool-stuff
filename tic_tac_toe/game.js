@@ -59,36 +59,33 @@ const handleMove = () => {
 };
 
 const checkGameStatus = (moveDetails) => {
-  const { moveCount, currPlayerMoves, symbol, boxes, player1, player2 } =
-    moveDetails;
+  const { moveCount, currPlayerMoves, symbol, boxes } = moveDetails;
 
   if (hasWinnerFound(currPlayerMoves)) {
     removeAllClickHandlers(boxes);
-    displayWinnerMessage(player1, player2, symbol);
+    displayWinnerMessage(symbol);
     return;
   }
 
   if (moveCount === 9) displaydrawMessage();
 };
 
-const attachClickHandlers = (player1, player2, boxes) => {
+const attachClickHandlers = (boxes) => {
   const moveHandler = handleMove();
 
   boxes.forEach((box, index) => {
     box.onclick = (event) => {
       const moveDetails = moveHandler(event, index + 1);
 
-      checkGameStatus({ ...moveDetails, boxes, player1, player2 });
+      checkGameStatus({ ...moveDetails, boxes });
     };
   });
 };
 
 const runGame = () => {
   const boxes = [...document.querySelectorAll(".box")];
-  const player1 = prompt("Enter Player 1 Name :");
-  const player2 = prompt("Enter Player 2 Name :");
 
-  attachClickHandlers(player1, player2, boxes);
+  attachClickHandlers(boxes);
 };
 
 runGame();
