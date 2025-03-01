@@ -25,8 +25,8 @@ const modifyClickedBox = (event, symbol) => {
   event.target.onclick = null;
 };
 
-const displayWinnerMessage = (player1, player2, symbol) => {
-  const winner = symbol === "X" ? player2 : player1;
+const displayWinnerMessage = (symbol) => {
+  const winner = symbol === "X" ? "player 2" : "player 1";
   document.querySelector("#winner-message").textContent = `${winner} Wins!`;
 };
 
