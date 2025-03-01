@@ -47,11 +47,11 @@
         const ball = document.createElement("div");
         ball.style.position = "absolute";
         ball.style.height = size + "px";
-        ball.style.width = size + "px";
+        ball.style.width = size * 2.5 + "px";
         ball.style.backgroundColor = `${colorPick()}`;
-        ball.style.borderRadius = "50%";
+        ball.style.borderRadius = "60%";
         ball.style.marginTop = `${random(1000)}px`;
-        ball.style.marginLeft = `${random(1800)}px`;
+        ball.style.marginLeft = `${random(600)}px`;
         ball.style.opacity = "90%";
         ball.style.transitionDuration = "1s";
         place.appendChild(ball);
@@ -62,11 +62,11 @@
         }, 0);
 
         setTimeout(() => {
-          ball.style.opacity = "50%";
+          ball.style.opacity = "60%";
         }, 500);
 
         setTimeout(() => {
-          ball.style.opacity = "10%";
+          ball.style.opacity = "20%";
         }, 800);
 
         setTimeout(() => {
